@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="findfixer:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="findfixer.war">
+      <element id="artifact" artifact-name="findfixer:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -2,6 +2,10 @@ package com.findfixer.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import javax.servlet.FilterRegistration;
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration;
+
 public class FindFixerWebInit extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	@Override
@@ -21,4 +25,10 @@ public class FindFixerWebInit extends AbstractAnnotationConfigDispatcherServletI
 		return new String[]{"/"};
 	}
 
+	@Override
+	protected void customizeRegistration(ServletRegistration.Dynamic registration){
+        //上传文件的绝对路径,限制文件的大小，限制整个请求的文件大小
+        registration.setMultipartConfig(new MultipartConfigElement("D:/",2097152,4194304,0));
+
+	}
 }
